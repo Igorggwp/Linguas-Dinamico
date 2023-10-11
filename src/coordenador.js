@@ -1,8 +1,8 @@
-const URL = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%3D%3D%22coordenacao%22%5D%7B%0A++%0A+++%22coordenador%22%3Acoordenacao%2C%0A+++++%22imagem%22%3Aimagem_coordenador.asset-%3Eurl%0A+%0A%7D";
+const URL_COORDENADOR = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%3D%3D%22coordenacao%22%5D%7B%0A++%0A+++%22coordenador%22%3Acoordenacao%2C%0A+++++%22imagem%22%3Aimagem_coordenador.asset-%3Eurl%0A+%0A%7D";
 
 const content = document.querySelector("#coordenador"); // Seleciona o elemento com id "professor"
 
-fetch(URL, {method: "GET" }) // Realiza um GET para a URL da API
+fetch(URL_COORDENADOR, {method: "GET" }) // Realiza um GET para a URL da API
     .then(response => {
         return response.json(); // Converte para JSON
     })

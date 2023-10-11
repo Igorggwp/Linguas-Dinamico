@@ -1,8 +1,9 @@
-const URL = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22faq%22%5D%7B%0A++pergunta%2C+resposta%0A%7D&perspective=published";
+const URL_FAQ = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22faq%22%5D%7B%0A++pergunta%2C+resposta%0A%7D&perspective=published";
 
-const content = document.querySelector("#faq"); // Seleciona o elemento com id "faq"
+// se usar content ou contentElement na criacao de outro .js vai dar problema, usar outro nome
+const contentElement = document.querySelector("#faq"); // Seleciona o elemento com id "faq"
 
-fetch(URL, {method: "GET" }) // Realiza um GET para a URL da API
+fetch(URL_FAQ, {method: "GET" }) // Realiza um GET para a URL da API
     .then(response => {
         return response.json(); // Converte para JSON
     })
@@ -26,7 +27,7 @@ fetch(URL, {method: "GET" }) // Realiza um GET para a URL da API
             faqItem.appendChild(resposta);
 
             layout.appendChild(faqItem); // Adciona o item do FAQ ao layout
-            content.appendChild(layout); //Adciona o layout ao conteudo do FAQ
+            contentElement.appendChild(layout); //Adciona o layout ao conteudo do FAQ
         });
     })
     .catch(error => console.error("Erro ao processar a requisição:", error));
