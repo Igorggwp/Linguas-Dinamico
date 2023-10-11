@@ -133,12 +133,13 @@ header nav a {
 
 
 .btn {
-    font-weight: 500;
+    font-weight: var(--fw-500);
+    font-size: var(--fs-20);
     width: auto;
     background-color: var(--white);
     color: var(--black);
-    border: 2px solid var(--yellow);
-    padding: 10px;
+    border: 3px solid var(--yellow);
+    padding: 20px;
     margin: 10px 0;
     text-align: left;
     border-radius: 4px;
