@@ -1,5 +1,5 @@
 // Perguntas
-const englishQuestions = [
+const ingles = [
     {
         question: "Qual é a forma correta do verbo 'to be' na terceira pessoa do singular no presente simples?",
         answers: [
@@ -108,9 +108,82 @@ const englishQuestions = [
             { text: "Whatever", correct: false },
             { text: "However", correct: false }
         ]
+    },
+    {
+        question: "Qual e a forma correta no plurar da palavra 'child'?",
+        answers: [
+            { text: "childs", correct: false },
+            { text: "child's", correct: false },
+            { text: "children", correct: true },
+            { text: "childes", correct: false }
+        ]
+    },
+    {
+        question: "Escolha a palavra correta para completar a frase: 'She is ____ student.'",
+        answers: [
+            { text: "an", correct: true },
+            { text: "a", correct: false },
+            { text: "the", correct: false },
+            { text: "some", correct: false }
+        ]
+    },
+    {
+        question: "Qual o superlativo do adjetivo 'good'?",
+        answers: [
+            { text: "better", correct: false },
+            { text: "goodest", correct: false },
+            { text: "best", correct: true },
+            { text: "goods", correct: false }
+        ]
+    },
+    {
+        question: "Qual palavra e sinônimo de 'happy'?",
+        answers: [
+            { text: "sad", correct: false },
+            { text: "angry", correct: false },
+            { text: "joyful", correct: true },
+            { text: "mad", correct: false }
+        ]
+    },
+    {
+        question: "Escolha a preposição correta: 'She is afraid ____ spiders.'",
+        answers: [
+            { text: "of", correct: true },
+            { text: "in", correct: false },
+            { text: "on", correct: false },
+            { text: "with", correct: false }
+        ]
+    },
+    {
+        question: "Escolha qual é um verbo modal em Inglés?",
+        answers: [
+            { text: "Do", correct: false },
+            { text: "Can", correct: true },
+            { text: "Run", correct: false },
+            { text: "Jump", correct: false }
+        ]
+    },
+    {
+        question: "Escolha a forma comparativa correta do adjetivo 'tall': 'He is _____ than his brother.'",
+        answers: [
+            { text: "taller", correct: true },
+            { text: "tallest", correct: false },
+            { text: "more tall", correct: false },
+            { text: "talliest", correct: false }
+        ]
+    },
+    {
+        question: "Qual é a forma plural correta de 'child' em inglês?",
+        answers: [
+            { text: "childs", correct: false },
+            { text: "children", correct: true },
+            { text: "childes", correct: false },
+            { text: "child's", correct: false }
+        ]
     }
+    
 ];
-const spanishQuestions = [
+const espanhol = [
     {
         question: "Qual é a forma correta do verbo 'ser' na terceira pessoa do singular no presente simples?",
         answers: [
@@ -219,9 +292,81 @@ const spanishQuestions = [
             { text: "Cualquier cosa", correct: false },
             { text: "Sin embargo", correct: false }
         ]
+    },
+    {
+        question: "Qual é a forma correta do verbo 'hablar' na primeira pessoa do singular do presente?",
+        answers: [
+            { text: "hablo", correct: true },
+            { text: "habla", correct: false },
+            { text: "hablas", correct: false },
+            { text: "hablamos", correct: false }
+        ]
+    },
+    {
+        question: "Escolha o pronome pessoal correto para completar a frase: '_____ gusta la música.'",
+        answers: [
+            { text: "Me", correct: false },
+            { text: "Te", correct: false },
+            { text: "Nos", correct: false },
+            { text: "Le", correct: true }
+        ]
+    },
+    {
+        question: "Qual é a forma correta do verbo 'escrever' no imperativo da segunda pessoa do plural?",
+        answers: [
+            { text: "escribéis", correct: true },
+            { text: "escribe", correct: false },
+            { text: "escribamos", correct: false },
+            { text: "escribes", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o plural de 'niño'?",
+        answers: [
+            { text: "niñes", correct: false },
+            { text: "niños", correct: true },
+            { text: "niñitos", correct: false },
+            { text: "niñas", correct: false }
+        ]
+    },
+    {
+        question: "Escolha a alternativa correta para completar a frase: 'Voy a la tienda ____ comprar comida.'",
+        answers: [
+            { text: "para", correct: true },
+            { text: "con", correct: false },
+            { text: "por", correct: false },
+            { text: "en", correct: false }
+        ]
+    },
+    {
+        question: "Qual é a forma correta do verbo 'vivir' na terceira pessoa do singular no passado perfeito simples?",
+        answers: [
+            { text: "viví", correct: false },
+            { text: "vivió", correct: true },
+            { text: "vivido", correct: false },
+            { text: "vive", correct: false }
+        ]
+    },
+    {
+        question: "Escolha o adjetivo correto para completar a frase: 'Es un día _____.'",
+        answers: [
+            { text: "soleado", correct: true },
+            { text: "lluvioso", correct: false },
+            { text: "ventoso", correct: false },
+            { text: "nublado", correct: false }
+        ]
+    },
+    {
+        question: "Qual é a forma correta do verbo 'ser' na segunda pessoa do singular do imperativo?",
+        answers: [
+            { text: "sea", correct: false },
+            { text: "seas", correct: true },
+            { text: "serás", correct: false },
+            { text: "seres", correct: false }
+        ]
     }
 ];
-const frenchQuestions = [
+const frances = [
     {
         question: "Qual é a forma correta do verbo 'être' na terceira pessoa do singular no presente simples?",
         answers: [
@@ -330,6 +475,78 @@ const frenchQuestions = [
             { text: "Quoi que", correct: false },
             { text: "Cependant", correct: false }
         ]
+    },
+    {
+        question: "Qual é a forma correta do verbo 'aller' para as três pessoas presentes?",
+        answers: [
+            { text: "vais", correct: false },
+            { text: "allez", correct: false },
+            { text: "vont", correct: true },
+            { text: "aller", correct: false }
+        ]
+    },
+    {
+        question: "Escolha o pronome pessoal correto para completar a frase : '_____ aime danser.'",
+        answers: [
+            { text: "Je", correct: false },
+            { text: "Tu", correct: true },
+            { text: "Il", correct: false },
+            { text: "Nous", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o pretérito do verbo 'avoir'?",
+        answers: [
+            { text: "ai", correct: false },
+            { text: "as", correct: false },
+            { text: "a", correct: false },
+            { text: "eu", correct: true }
+        ]
+    },
+    {
+        question: "Escolha a palavra correta para completar a frase : 'Elle est ____ fille.'",
+        answers: [
+            { text: "une", correct: true },
+            { text: "un", correct: false },
+            { text: "le", correct: false },
+            { text: "la", correct: false }
+        ]
+    },
+    {
+        question: "",
+        answers: [
+            { text: "parle", correct: true },
+            { text: "parleras", correct: false },
+            { text: "parlerez", correct: false },
+            { text: "parles", correct: false }
+        ]
+    },
+    {
+        question: "Qual é a forma correta do verbo 'parler' na segunda pessoa do singular no futuro simples?",
+        answers: [
+            { text: "as", correct: false },
+            { text: "ai", correct: true },
+            { text: "a", correct: false },
+            { text: "avons", correct: false }
+        ]
+    },
+    {
+        question: "Escolha a palavra correta para completar a frase : 'Il a ____ pomme.'",
+        answers: [
+            { text: "une", correct: true },
+            { text: "un", correct: false },
+            { text: "le", correct: false },
+            { text: "la", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o pronome pessoal correto para completar a frase : '_____ aime le chocolat.'",
+        answers: [
+            { text: "Je", correct: true },
+            { text: "Tu", correct: false },
+            { text: "Il", correct: false },
+            { text: "Nous", correct: false }
+        ]
     }
 ];
 
@@ -339,18 +556,15 @@ let questions = [];
 
 // Funcao para selecionar idioma baseado na escolha do usuario
 function selectLanguage(language) {
-    if (language === 'english') {
-        selectedQuestions = englishQuestions;
+    if (language === 'english') { 
+        selectedQuestions = ingles;
     } else if (language === 'french') {
-        selectedQuestions = frenchQuestions;
+        selectedQuestions = frances;
     } else if (language === 'spanish') {
-        selectedQuestions = spanishQuestions;
-    } else {
-        console.error('Invalid language choice.');
-        return;
+        selectedQuestions = espanhol;
     }
 
-    questions = selectedQuestions;
+    questions = selectedQuestions; // As questoes serao definidas pelo idioma selecionado
     hideLanguageSelection(); // Esconder selecao de idiomas
     showQuiz();  // Mostrar o quiz
     startQuiz();  // Iniciar o quiz
@@ -376,7 +590,7 @@ let score = 0; // Pontuacao
 function hideLanguageSelection() { 
     const selecaoDiv = document.getElementById("selecao");
     if (selecaoDiv) {
-        selecaoDiv.classList.add('hide');
+        selecaoDiv.classList.add('hide'); // Para esconder
     }
 }
 
@@ -393,6 +607,14 @@ function showQuiz() {
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+
+    // Embaralhar as perguntas
+    questions = selectedQuestions.map(question => ({ ...question })); // Clonar as perguntas por meio do arrow function
+    questions = fisheryates(questions); // Puxa a funcao de embaralhar
+
+    // Seleciona as primeiras 12 questoes que foram embaralhadas
+    questions = questions.slice(0, 12);
+
     // Define o botao
     nextButton.innerHTML = "Próximo";
 
@@ -400,6 +622,17 @@ function startQuiz() {
     setNextQuestion(); // Evento para ir a proxima pergunta
     selectAnswer(); // Evento para selecionar resposta
     finishQuiz(); // Evento para finalizar quiz
+}
+
+// Funcao para embaralhar um array usando o Fisher Yates
+function fisheryates(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        // Escolhe um indice aleatorio entre 0 e i
+        const j = Math.floor(Math.random() * (i + 1));
+        // Troca os elementos de posicao
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 // Exibir as perguntas
