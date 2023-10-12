@@ -1,3 +1,4 @@
+// Perguntas
 const englishQuestions = [
     {
         question: "Qual é a forma correta do verbo 'to be' na terceira pessoa do singular no presente simples?",
@@ -332,9 +333,11 @@ const frenchQuestions = [
     }
 ];
 
+// declaracoes para a chamada
 let selectedQuestions;
 let questions = [];
 
+// Funcao para selecionar idioma baseado na escolha do usuario
 function selectLanguage(language) {
     if (language === 'english') {
         selectedQuestions = englishQuestions;
@@ -348,33 +351,36 @@ function selectLanguage(language) {
     }
 
     questions = selectedQuestions;
-    hideLanguageSelection();
+    hideLanguageSelection(); // Esconder selecao de idiomas
     showQuiz();  // Mostrar o quiz
     startQuiz();  // Iniciar o quiz
 }
 
-const questionElement = document.getElementById("pergunta");
-const answerButtonsElement = document.getElementById("answer-button");
-const nextButton = document.getElementById("next-btn");
-const backButton = document.getElementById("back-btn");
-const progressBar = document.getElementById("progress");
-const progressText = document.getElementById("progress-text");
-const finishButton = document.getElementById("finish-btn");
-const backButtonFinish = document.getElementById("back-question");
-const result = document.getElementById("result");
-const resultText = document.getElementById("result-text");
-const ResultNivel = document.getElementById("result-nivel");
-const restartButton = document.getElementById("restart-btn");
-let currentQuestionIndex = 0;
-let score = 0;
+// Inicializacao 
+const questionElement = document.getElementById("pergunta"); // Elemento para mostrar a pergunta
+const answerButtonsElement = document.getElementById("answer-button"); // Elemento para os botoes de resposta
+const nextButton = document.getElementById("next-btn"); // Botao para proxima pergunta
+const backButton = document.getElementById("back-btn"); // Botao para pergunta anterior
+const progressBar = document.getElementById("progress"); // Barra de progresso
+const progressText = document.getElementById("progress-text"); // Texto de progresso
+const finishButton = document.getElementById("finish-btn"); // Botao para finalizar
+const backButtonFinish = document.getElementById("back-question"); // Botao para voltar a pergunta
+const result = document.getElementById("result"); // Elemento para mostrar o resultado
+const resultText = document.getElementById("result-text"); // Texto do resultado
+const ResultNivel = document.getElementById("result-nivel"); // Nivel do resultado
+const restartButton = document.getElementById("restart-btn"); //Botao para reiniciar
+let currentQuestionIndex = 0; // Indice da pergunta atual
+let score = 0; // Pontuacao
 
-function hideLanguageSelection() {
+// Funcao para esconder selecao de opcoes
+function hideLanguageSelection() { 
     const selecaoDiv = document.getElementById("selecao");
     if (selecaoDiv) {
         selecaoDiv.classList.add('hide');
     }
 }
 
+//  Funcao para exibir quiz
 function showQuiz() {
     const quizDiv = document.getElementById("quiz");
     if (quizDiv) {
@@ -383,22 +389,29 @@ function showQuiz() {
     }
 }
 
+// Funcao para iniciar o quiz
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
+    // Define o botao
     nextButton.innerHTML = "Próximo";
-    showQuestion();
-    setNextQuestion();
-    selectAnswer();
-    finishQuiz();
+
+    showQuestion(); // Exibe a pergunta
+    setNextQuestion(); // Evento para ir a proxima pergunta
+    selectAnswer(); // Evento para selecionar resposta
+    finishQuiz(); // Evento para finalizar quiz
 }
 
+// Exibir as perguntas
 function showQuestion() {
     resetState();
+    // Pegar a pergunta atual baseado no indice
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
+    // Exibe o numero e o texto da pergunta
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
+    //Adciona os botoes de respostas
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -410,30 +423,32 @@ function showQuestion() {
         button.addEventListener("click", selectAnswer);
     });
 
+    // Botao voltar, se for a primeira pergunta ele fica transparente em 50%
     if (currentQuestionIndex === 0) {
         backButton.style.filter = "brightness(50%)";
     } else {
         backButton.style.filter = "brightness(100%)";
     }
-
+    // Atualiza a barra de progresso
     progress();
 }
 
+// Evento do click pro "Proximo"
 nextButton.addEventListener("click", () => {
     const lastQuestion = questions.length - 1;
     currentQuestionIndex++;
-
+    // Exibe a proxima pergunta
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else if (currentQuestionIndex > lastQuestion) {
         currentQuestionIndex = lastQuestion;
-        finishQuiz();
+        finishQuiz(); // Finaliza se for a ultima
     }
 });
-
+// Evento do click pro "Voltar"
 backButton.addEventListener("click", () => {
     currentQuestionIndex--;
-
+    // Exibe se tiver perguntas anteriores
     if (currentQuestionIndex >= 0) {
         showQuestion();
     } else {
@@ -441,22 +456,29 @@ backButton.addEventListener("click", () => {
     }
 });
 
+// Selecionar a resposta
 function selectAnswer(e) {
+    // Selecao de uma resposta
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct === "true";
 
+    // Atualiza o estilo do botao de resposta
     const allButtons = document.querySelectorAll('.btn');
     allButtons.forEach(button => button.classList.remove('btn-selected'));
 
     selectedButton.classList.add('btn-selected');
 
+    // Soma a pontuacao
     if (correct) {
         score++;
     }
+
+    // Libera o botao proximo
     nextButton.style.filter = "brightness(100%)";
     nextButton.disabled = false;
 }
 
+// Reinicializa antes de exibir uma nova pergunta
 function resetState() {
     nextButton.style.filter = "brightness(50%)";
     nextButton.disabled = true;
@@ -465,12 +487,15 @@ function resetState() {
     }
 }
 
+// Atualiza a barra de progresso do quiz
 function progress() {
     const currentQuestion = currentQuestionIndex + 1;
     progressBar.style.width = (currentQuestion / questions.length) * 100 + "%";
     progressText.innerHTML = (currentQuestionIndex + 1) + "/" + questions.length;
 }
 
+// Logica para finalizar o quiz
+// Alterna a visibilidade do finish e quiz entre visivel e invisivel para poder exibir os resultados
 function finishQuiz() {
     if (finish.classList.contains("hide")) {
         finish.classList.remove("hide");
@@ -489,6 +514,7 @@ function finishQuiz() {
     }
 }
 
+// Evento de clique no botao "Voltar" (tela de resultados)
 backButtonFinish.addEventListener("click", () => {
     const lastQuestion = questions.length - 1;
     currentQuestionIndex = lastQuestion;
@@ -496,6 +522,7 @@ backButtonFinish.addEventListener("click", () => {
     finishQuiz();
 });
 
+// Evento de clique no botao "Finalizar"
 finishButton.addEventListener("click", () => {
     const lastQuestion = questions.length - 1;
     currentQuestionIndex = lastQuestion;
@@ -506,6 +533,7 @@ finishButton.addEventListener("click", () => {
     resultQuiz();
 });
 
+// Logica para exibir o resultado do quiz
 function resultQuiz() {
     if (result.classList.contains("hide")) {
         result.classList.remove("hide");
@@ -520,6 +548,7 @@ function resultQuiz() {
     resultBaar();
 }
 
+// Atualiza a barra de resultados com base na pontuacao
 function resultBaar() {
     const resultBar = document.getElementById("result-bar");
     resultBar.className = '';
@@ -528,6 +557,7 @@ function resultBaar() {
     resultBar.classList.add("result-bar" + limitedScore);
 }
 
+// Funcao para mostrar o resultado baseado no score
 function resultNivel() {
     const nivelText = document.getElementById("nivel-text");
     if (score <= 2) {
