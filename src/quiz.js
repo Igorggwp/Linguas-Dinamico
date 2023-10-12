@@ -173,15 +173,14 @@ const ingles = [
         ]
     },
     {
-        question: "Qual é a forma plural correta de 'child' em inglês?",
+        question: "Qual é a forma plural correta de 'people' em inglês?",
         answers: [
-            { text: "childs", correct: false },
-            { text: "children", correct: true },
-            { text: "childes", correct: false },
-            { text: "child's", correct: false }
+        { text: "peoples", correct: true },
+        { text: "peoplen", correct: false },
+        { text: "peopler", correct: false },
+        { text: "people's", correct: false }
         ]
     }
-    
 ];
 const espanhol = [
     {
