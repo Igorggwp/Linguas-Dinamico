@@ -453,7 +453,6 @@ function selectAnswer(e) {
     if (correct) {
         score++;
     }
-
     nextButton.style.filter = "brightness(100%)";
     nextButton.disabled = false;
 }
