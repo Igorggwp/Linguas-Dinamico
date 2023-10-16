@@ -330,7 +330,6 @@ span{
 
 /* SEGUNDA PAGINA */
 
-
 .redes{
     margin-top: 10%;
     /* DETERMINA UM FUNDO DIFERENTE (BRANCO) */
@@ -355,8 +354,23 @@ span{
     color: var(--blue);
     font-weight: var(--fw-400);
 }
-.redes-img img{
-    width: 25%;
+
+.redes-img {
+    display: flex;
+    flex-wrap: wrap; 
+ 
+}
+
+.redes-img a {
+    width: calc(25% - 4px); 
+    margin: 4px; 
+    display: inline-block; 
+    text-align: center; 
+}
+
+.redes-img img {
+    max-width: 100%; 
+    height: auto;
 }
 
 /* TERCEIRA PAGINA (METODOLOGIA) */
