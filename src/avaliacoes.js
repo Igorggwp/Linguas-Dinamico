@@ -5,6 +5,9 @@ const avaliacoesContentElement = document.querySelector("#avaliacoes");
 fetch(URL_AVALIACOES, { method: "GET" })
     .then(response => response.json())
     .then(data => {
+        const testimonialBoxContainer = document.createElement("div");
+        testimonialBoxContainer.classList.add("testimonial-box-container");
+
         data.result.forEach(avaliacao => {
             const avaliacaoItem = document.createElement("div");
             avaliacaoItem.classList.add("testimonial-box");
@@ -18,7 +21,7 @@ fetch(URL_AVALIACOES, { method: "GET" })
             const profileImg = document.createElement("div");
             profileImg.classList.add("profile-img");
             const img = document.createElement("img");
-            img.src = avaliacao.imagem_avalicao; // Use o campo real para a imagem
+            img.src = avaliacao.imagem_avalicao; 
             img.alt = "imagem usuário";
             profileImg.appendChild(img);
 
@@ -29,7 +32,6 @@ fetch(URL_AVALIACOES, { method: "GET" })
             const span = document.createElement("span");
             span.textContent = `@${avaliacao.usuario}`;
             
-            // Adiciona as estrelas ao lado direito do nome do usuário
             const boxEstrela = document.createElement("div");
             boxEstrela.classList.add("box-estrela");
 
@@ -66,7 +68,9 @@ fetch(URL_AVALIACOES, { method: "GET" })
 
             avaliacaoItem.appendChild(clientComment);
 
-            avaliacoesContentElement.appendChild(avaliacaoItem);
+            testimonialBoxContainer.appendChild(avaliacaoItem);  
         });
+
+        avaliacoesContentElement.appendChild(testimonialBoxContainer);  
     })
     .catch(error => console.error("Erro ao processar a requisição:", error));

@@ -6,7 +6,7 @@ fetch(URL_EVENTOS, { method: "GET" })
         return response.json(); // Converte a resposta em formato JSON
     })
     .then(data => {
-        const eventosContainer = document.querySelector('.redes-img'); 
+        const eventosContainer = document.querySelector('.eventos'); 
 
         data.result.forEach(evento => { 
             // Cria um elemento 'a' (link) para cada evento

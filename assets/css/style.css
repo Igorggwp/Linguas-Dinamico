@@ -156,6 +156,7 @@ h2{
 .titulo-inicio{
     font-size: var(--fs-40);
 }
+
 .left-content{
     display: flex;
     flex-direction: column;
@@ -245,6 +246,7 @@ span{
     border-radius: 25px;
     background-color: var(--white);
 }
+
 .image-content,
 .card-content{
     display: flex;
@@ -258,6 +260,7 @@ span{
     row-gap: 5px;
     padding: 25px 0;
 }
+
 .overlay{
     position: absolute;
     left: 0;
@@ -330,33 +333,46 @@ span{
 
 /* SEGUNDA PAGINA */
 
-
-.redes{
+.second-section {
     margin-top: 10%;
-    /* DETERMINA UM FUNDO DIFERENTE (BRANCO) */
     background-image: url("../img/backgrounds/papel_de_parede_branco.png");
     width: 100%;
     height: 100%;
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     padding: 10% 10%;
 }
-.redes-text{
-    max-width:70rem;
+
+.eventos-text {
+    max-width: 70rem;
     margin-right: 50px;
 }
-.titulo-redes{
+
+.titulo-redes {
     color: var(--blue);
     margin-bottom: 10px;
 }
 
-.descricao-redes{
+.descricao-redes {
     color: var(--blue);
     font-weight: var(--fw-400);
 }
-.redes-img img{
-    width: 25%;
+
+.eventos {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.eventos a {
+    width: calc(25% - 4px); 
+    margin: 4px; 
+    display: inline-block; 
+    text-align: center; 
+}
+
+.eventos img {
+    max-width: 100%; 
+    height: auto;
 }
 
 /* TERCEIRA PAGINA (METODOLOGIA) */
@@ -451,12 +467,7 @@ span{
     margin-bottom: 15px;
 }
 
-
-
-
 /* QUARTA PAGINA (PROFESSORES) */
-
-
 
 .titulo-prof{
     margin-top: 50px;
@@ -533,11 +544,11 @@ span{
 
 #testimonials {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     width: 100%;
 }
+
 
 .testimonial-heading {
     margin: 30px 0px;
@@ -554,18 +565,12 @@ span{
 
 .testimonial-box-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.testimonial-box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    gap: 20px; 
-    width: 100%;
+    gap: 20px;
+    width: 80%; 
+    max-width: 1200px;
+    margin: 0 auto; 
 }
 
 .testimonial-box {
@@ -576,7 +581,6 @@ span{
     padding: 20px;
     margin: 15px;
 }
-
 
 .profile-img {
     width: 50px;
@@ -697,8 +701,6 @@ span{
   .accordion.active .accordion__answer {
     display: block;
   }
-
-
 
 /* FOOTER */
 
