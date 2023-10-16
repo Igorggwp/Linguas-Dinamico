@@ -549,7 +549,6 @@ span{
     width: 100%;
 }
 
-
 .testimonial-heading {
     margin: 30px 0px;
     padding: 10px 20px;
@@ -568,13 +567,13 @@ span{
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    width: 80%; 
+    width: 80%;
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .testimonial-box {
-    width: 500px;
+    flex: 1 1 500px;
     box-shadow: 1px 1px 3px var(--white);
     background-color: var(--white);
     border-radius: 0px 30px 30px 30px;
@@ -649,7 +648,6 @@ span{
 .empty-star {
     color: #ccc; /* ou qualquer outra cor para estrelas vazias */
 }
-
 /* SEXTA PAGINA (FAQ) */
 
 .sixth-section{
