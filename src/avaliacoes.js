@@ -2,8 +2,7 @@ const URL_AVALIACOES = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/pr
 
 const avaliacoesContentElement = document.querySelector("#avaliacoes");
 
-// Realiza a requisição para a URL das avaliações
-fetch(URL_AVALIACOES, { method: "GET" })
+fetch(URL_AVALIACOES, { method: "GET" }) // Realiza um GET para a URL da API
     .then(response => response.json())
     .then(data => {
         // Cria um contêiner para as avaliações
@@ -12,36 +11,31 @@ fetch(URL_AVALIACOES, { method: "GET" })
 
         // Recebe os dados das avaliações
         data.result.forEach(avaliacao => {
-            // Cria um elemento para representar uma avaliação
-            const avaliacaoItem = document.createElement("div");
+            
+            const avaliacaoItem = document.createElement("div"); // Cria um elemento <div> para representar uma "avaliacao"
             avaliacaoItem.classList.add("testimonial-box");
 
-            // Cria a seção superior da caixa de avaliação
-            const boxTop = document.createElement("div");
+            const boxTop = document.createElement("div"); // Cria a seção superior da caixa de avaliação
             boxTop.classList.add("box-top");
 
-            // Cria a seção do perfil do usuário
-            const profile = document.createElement("div");
+            const profile = document.createElement("div"); // Cria a seção do perfil do usuário
             profile.classList.add("profile");
 
-            // Cria a seção da imagem de perfil
-            const profileImg = document.createElement("div");
+            const profileImg = document.createElement("div"); // Cria a seção da imagem de perfil
             profileImg.classList.add("profile-img");
             const img = document.createElement("img");
             img.src = avaliacao.imagem_avalicao; 
             img.alt = "imagem usuário";
             profileImg.appendChild(img);
 
-            // Cria a seção do nome de usuário
-            const nameUser = document.createElement("div");
+            const nameUser = document.createElement("div"); // Cria a seção do nome de usuário
             nameUser.classList.add("name-user");
             const strong = document.createElement("strong");
             strong.textContent = avaliacao.nome;
             const span = document.createElement("span");
             span.textContent = `@${avaliacao.usuario}`;
             
-            // Cria a seção das estrelas de avaliação
-            const boxEstrela = document.createElement("div");
+            const boxEstrela = document.createElement("div");  // Cria a seção das estrelas de avaliação
             boxEstrela.classList.add("box-estrela");
 
             // Converte a nota para inteiro

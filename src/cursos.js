@@ -1,4 +1,3 @@
-// Definir a URL da API de cursos
 const URL_CURSOS = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%3D%3D%22curso%22%0A+%5D+%0A++%7B%0A++%22Curso%22%3Acurso%2C%0A+%7D";
 
 // Selecionar o elemento HTML com a classe "description"
@@ -12,8 +11,7 @@ var fragmento = document.createDocumentFragment();
 // Selecionar o elemento HTML com o id "cursos"
 const seletor = document.querySelector("select#cursos")
 
-// Realizar uma solicitação GET para a URL da API
-fetch(URL_CURSOS, {
+fetch(URL_CURSOS, { // Realizar uma solicitação GET para a URL da API
     method: "GET",
 })
     .then(result => result.json()) // Converter a resposta em JSON
@@ -43,4 +41,4 @@ fetch(URL_CURSOS, {
         // Preencher o elemento "description" com a string de cursos
         description.innerHTML = cursos;
     })
-    .catch(console.error); // Lidar com erros, se ocorrerem
+    .catch(error => console.error("Erro ao processar a requisição:", error));
