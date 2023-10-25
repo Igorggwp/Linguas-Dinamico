@@ -5,6 +5,7 @@ const API_URLS = {
 };
 
 let selectedQuestions = [];
+const selectedAnswers = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -116,7 +117,9 @@ function showQuestion() {
     resetState();
     if (currentQuestionIndex < selectedQuestions.length) {
         const currentQuestion = selectedQuestions[currentQuestionIndex];
-        questionElement.textContent = currentQuestion.pergunta;
+        let questionNo = currentQuestionIndex + 1;
+        // Exibe o numero e o texto da pergunta
+        questionElement.textContent = questionNo + ". " + currentQuestion.pergunta;
 
         // Embaralhe as respostas
         const shuffledAnswers = shuffleQuestions([...currentQuestion.respostas]);
@@ -168,23 +171,22 @@ function selectAnswer(correct) {
     const selectedButton = event.target;
     const isCorrect = correct === "true" || correct === true;
 
-    if (isCorrect) {
-        score++;
-    }
+    // Armazene a resposta atual como a resposta selecionada para a pergunta
+    selectedAnswers[currentQuestionIndex] = isCorrect;
 
-    // Remova a classe 'btn-selected' de todos os botões
     const allButtons = document.querySelectorAll('.btn');
     allButtons.forEach((button) => {
         button.classList.remove('btn-selected');
     });
 
-    // Adicione a classe 'btn-selected' apenas à resposta selecionada
+    // Selecionar alternativa desejada
     selectedButton.classList.add('btn-selected');
 
-    // Ative o botão 'Próxima' para avançar para a próxima pergunta
+    // Botao proximo
     nextButton.style.filter = "brightness(100%)";
     nextButton.disabled = false;
 }
+
 
 // Reinicializa antes de exibir uma nova pergunta
 function resetState() {
@@ -243,6 +245,11 @@ finishButton.addEventListener("click", () => {
 
 // Logica para exibir o resultado do quiz
 function resultQuiz() {
+    const lastQuestion = selectedQuestions.length - 1;
+    const lastSelectedAnswers = selectedAnswers.slice(0, lastQuestion + 1);
+
+    score = lastSelectedAnswers.filter((answer) => answer).length;
+
     if (result.classList.contains("hide")) {
         result.classList.remove("hide");
         result.classList.add("show");
@@ -250,11 +257,13 @@ function resultQuiz() {
         result.classList.remove("show");
         result.classList.add("hide");
     }
+
     resultText.textContent = `Você acertou ${score} de ${selectedQuestions.length} questões.`;
     restartButton.style.filter = "brightness(100%)";
-    resultNivel();
     resultBaar();
+    resultNivel();
 }
+
 
 // Atualiza a barra de resultados com base na pontuacao
 function resultBaar() {
