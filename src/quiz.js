@@ -37,6 +37,17 @@ function fetchQuestions(language) {
         });
 }
 
+// Funcao para sair durante o quiz
+function confirmExit(event) {
+    event.preventDefault();
+    event.returnValue = '';
+
+    const confirmation = 'Tem certeza de que deseja sair do quiz? Se você sair, seu progresso atual será perdido.';
+    event.returnValue = confirmation;
+    return confirmation;
+}
+window.addEventListener('beforeunload', confirmExit);
+
 // Funcao para selecionar idioma
 function startQuizWithLanguage(language) {
     fetchQuestions(language)
@@ -298,5 +309,6 @@ function resultNivel() {
 }
 
 restartButton.addEventListener("click", () => {
+    window.removeEventListener('beforeunload', confirmExit);
     startQuiz();
 });
