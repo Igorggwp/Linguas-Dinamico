@@ -44,8 +44,11 @@
     --fs-48: 3rem; 
 }
 
-/* DEFINIÇÃO DO PLANO DE FUNDO */
+html{
+    scroll-behavior: smooth;
+}
 
+/* DEFINIÇÃO DO PLANO DE FUNDO */
 body{
     background-image: url('../img/backgrounds/papel_de_parede_azul.svg');
     font-family: var(--fonte);
