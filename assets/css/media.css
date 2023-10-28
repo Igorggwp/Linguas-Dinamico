@@ -33,6 +33,9 @@
         max-width: 70rem;
         margin-right: 0px;
     }
+    .eventos a {
+        width: calc(40% - 4px);
+    }
     /* Third Section */
     .third-section {
         text-align: center;
