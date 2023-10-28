@@ -11,24 +11,27 @@ fetch(URL_PROFESSORES, { method: "GET" }) // Realiza um GET para a URL da API
   })
   .then((data) => { 
   
-    const professoresContainer = document.getElementById("professores-container"); // Busca o elemento com o id "professores-container".
+    const professoresContainer = document.getElementById("caixas"); // Busca o elemento com o id "professores-container".
 
     data.result.forEach((professor) => {
 
       const card = document.createElement("div"); // Cria um elemento <div> para representar um "card"
       card.classList.add("box");
 
-      const img = document.createElement("img"); // Cria um elemento img 
+      const imgProf = document.createElement("div"); // Cria um elemento <div> img
+      imgProf.classList.add("prof-img");
+      const img = document.createElement("img");
       img.src = professor.imagem;  
       img.alt = professor.professor; 
+      imgProf.appendChild(img);
 
-      const nome = document.createElement("div");
+      const nome = document.createElement("p");
       nome.textContent = professor.professor; // Define o texto do elemento com o nome do professor.
 
       const disciplina = document.createElement("div");
       disciplina.textContent = professor.disciplina; // Define o texto do elemento com a disciplina do professor.
 
-      card.appendChild(img); // Adciona itens ao card do Professor
+      card.appendChild(imgProf); // Adciona itens ao card do Professor
       card.appendChild(nome);
       card.appendChild(disciplina);
 
