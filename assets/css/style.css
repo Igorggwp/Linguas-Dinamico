@@ -440,6 +440,13 @@ span{
     gap: 20px;
 }
 
+.main__img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .main__img .title,
 .main__img .subtitle,
 .main__img .name {
@@ -490,13 +497,21 @@ span{
     min-height: 400px;
 }
 
-.img-profile{
+.prof-img {
     width: 40%;
-    border-radius: 50px;
-    margin-bottom: 20px;
+    height: 40%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.box1{
+.prof-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.box {
     width: 250px;
     height: 250px;
     background-color: var(--white);
@@ -506,38 +521,8 @@ span{
     align-items: center;
     flex-direction: column;
 }
-
-.box2{
-    width: 235px;
-    height: 250px;
-    background-color: var(--white);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.box3{
-    width: 235px;
-    height: 250px;
-    background-color: var(--white);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.box4{
-    width: 235px;
-    height: 250px;
-    background-color: var(--white);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.box p{
+    margin-top: 30px;
 }
 
 /* QUINTA PAGINA (AVALIAÇÕES) */
@@ -646,7 +631,7 @@ span{
 }
 
 .empty-star {
-    color: #ccc; /* ou qualquer outra cor para estrelas vazias */
+    color: #ccc;
 }
 
 /* SEXTA PAGINA (FAQ) */
