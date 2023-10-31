@@ -88,4 +88,4 @@ fetch(URL_AVALIACOES, { method: "GET" }) // Realiza um GET para a URL da API
         // Adiciona o contêiner de avaliações ao elemento de conteúdo das avaliações
         avaliacoesContentElement.appendChild(testimonialBoxContainer);  
     })
-    .catch(error => console.error("Erro ao processar a requisição:", error));
+    .catch(console.error);

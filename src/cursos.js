@@ -41,4 +41,4 @@ fetch(URL_CURSOS, { // Realizar uma solicitação GET para a URL da API
         // Preencher o elemento "description" com a string de cursos
         description.innerHTML = cursos;
     })
-    .catch(error => console.error("Erro ao processar a requisição:", error));
+    .catch(console.error);

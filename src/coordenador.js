@@ -3,9 +3,7 @@ const URL_COORDENADOR = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/p
 const content = document.querySelector("#coordenador"); // Seleciona o elemento com id "coordenador"
 
 fetch(URL_COORDENADOR, {method: "GET" }) // Realiza um GET para a URL da API
-    .then(response => {
-        return response.json(); // Converte para JSON
-    })
+    .then(response => response.json()) // Converte para JSON
     .then(data => {
         data.result.forEach(coordenacao => { // Quando é convertida processa os dados
 
@@ -27,4 +25,4 @@ fetch(URL_COORDENADOR, {method: "GET" }) // Realiza um GET para a URL da API
             content.appendChild(logo);
         });
     })
-    .catch(error => console.error("Erro ao processar a requisição:", error));
+    .catch(console.error);

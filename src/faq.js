@@ -3,9 +3,7 @@ const URL_FAQ = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/productio
 const contentElement = document.querySelector("#faq"); // Seleciona o elemento com id "faq"
 
 fetch(URL_FAQ, {method: "GET" }) // Realiza um GET para a URL da API
-    .then(response => {
-        return response.json(); // Converte para JSON
-    })
+.then(response => response.json())
     .then(data => {
         data.result.forEach(faq => { // Quando é convertida processa os dados
 
@@ -13,6 +11,9 @@ fetch(URL_FAQ, {method: "GET" }) // Realiza um GET para a URL da API
 
             const faqItem = document.createElement("div"); // Cria um elemento <div> para representar um "item"
             faqItem.classList.add("accordion");
+            faqItem.addEventListener("click", function() {
+                this.classList.toggle("active");
+            });
 
             const pergunta = document.createElement("div"); // Cria um elemento <div> para representar a pergunta
             pergunta.classList.add("accordion__question");
@@ -29,4 +30,4 @@ fetch(URL_FAQ, {method: "GET" }) // Realiza um GET para a URL da API
             contentElement.appendChild(layout); //Adciona o layout ao conteudo do FAQ
         });
     })
-    .catch(error => console.error("Erro ao processar a requisição:", error));
+    .catch(console.error);
