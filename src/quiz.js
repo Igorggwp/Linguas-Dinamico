@@ -10,31 +10,19 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 // Funcao para buscar perguntas na API
-function fetchQuestions(language) {
+async function fetchQuestions(language) {
     const apiUrl = API_URLS[language];
-
-    return fetch(apiUrl)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Erro na solicitação da API.");
-            }
-            return response.json();
-        })
-        .then((data) => {
-            if (data && data.result && data.result.length > 0) {
-                selectedQuestions = data.result; // Armazena as perguntas na var selectedQuestions
-                hideLanguageSelection();
-                showQuiz();
-                startQuiz();
-            } else {
-                console.error("Nenhuma pergunta encontrada na API.");
-            }
-            return data;
-        })
-        .catch((error) => {
-            console.error("Erro ao buscar as perguntas:", error);
-            throw error;
-        });
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        selectedQuestions = data.result;
+        hideLanguageSelection();
+        showQuiz();
+        startQuiz();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 // Funcao para sair durante o quiz
@@ -45,22 +33,8 @@ function confirmExit(event) {
     const confirmation = 'Tem certeza de que deseja sair do quiz? Se você sair, seu progresso atual será perdido.';
     event.returnValue = confirmation;
     return confirmation;
-}
+} 
 window.addEventListener('beforeunload', confirmExit);
-
-// Funcao para selecionar idioma
-function startQuizWithLanguage(language) {
-    fetchQuestions(language)
-        .then((data) => {
-            selectedQuestions = data.result;
-            hideLanguageSelection();
-            showQuiz();
-            startQuiz();
-        })
-        .catch((error) => {
-            console.error("Erro ao buscar as perguntas (starQuizWithLanguage):", error);
-        });
-}
 
 // Inicializacao
 const questionElement = document.getElementById("pergunta");
@@ -79,14 +53,16 @@ const finish = document.getElementById("finish");
 result.classList.add("hide");
 finish.classList.add("hide");
 
-document.getElementById("english").addEventListener("click", () => {
-    startQuizWithLanguage("ingles"); // Inicia o quiz
+document.getElementById("english").addEventListener("click", async () => {
+    await fetchQuestions("ingles");
 });
-document.getElementById("spanish").addEventListener("click", () => {
-    startQuizWithLanguage("espanhol"); // Inicia o quiz
+
+document.getElementById("spanish").addEventListener("click", async () => {
+    await fetchQuestions("espanhol");
 });
-document.getElementById("french").addEventListener("click", () => {
-    startQuizWithLanguage("frances"); // Inicia o quiz
+
+document.getElementById("french").addEventListener("click", async () => {
+    await fetchQuestions("frances");
 });
 
 // Funcao para esconder selecao de opcoes
@@ -110,7 +86,7 @@ function showQuiz() {
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    selectedQuestions = shuffleQuestions(selectedQuestions);
+    selectedQuestions = shuffleQuestions(selectedQuestions).slice(0, 12);
     showQuestion();
 }
 
