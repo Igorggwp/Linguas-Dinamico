@@ -404,6 +404,7 @@ span{
 .wrapper-metodologia{
     display: flex;
     align-items: center;
+    justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 10%;
@@ -431,6 +432,7 @@ span{
     background-color: var(--white);
     border-radius: 30px;
     gap: 20px;
+    
 }
 
 .main__img > img {
