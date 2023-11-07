@@ -2,96 +2,92 @@ const URL_AVALIACOES = "https://lvdt20mj.api.sanity.io/v2021-10-21/data/query/pr
 
 const avaliacoesContentElement = document.querySelector("#avaliacoes");
 
-// Realiza a requisição para a URL das avaliações
-fetch(URL_AVALIACOES, { method: "GET" })
-    .then(response => response.json())
-    .then(data => {
-        // Cria um contêiner para as avaliações
-        const testimonialBoxContainer = document.createElement("div");
-        testimonialBoxContainer.classList.add("testimonial-box-container");
+async function fetchAvaliacoes() {
+  try {
+    const response = await fetch(URL_AVALIACOES, { method: "GET" });
+    const data = await response.json();
 
-        // Recebe os dados das avaliações
-        data.result.forEach(avaliacao => {
-            // Cria um elemento para representar uma avaliação
-            const avaliacaoItem = document.createElement("div");
-            avaliacaoItem.classList.add("testimonial-box");
+    const testimonialBoxContainer = document.createElement("div");
+    testimonialBoxContainer.classList.add("testimonial-box-container");
 
-            // Cria a seção superior da caixa de avaliação
-            const boxTop = document.createElement("div");
-            boxTop.classList.add("box-top");
+    data.result.forEach(avaliacao => {
+      const avaliacaoItem = document.createElement("div");
+      avaliacaoItem.classList.add("testimonial-box");
 
-            // Cria a seção do perfil do usuário
-            const profile = document.createElement("div");
-            profile.classList.add("profile");
+      const boxTop = document.createElement("div");
+      boxTop.classList.add("box-top");
 
-            // Cria a seção da imagem de perfil
-            const profileImg = document.createElement("div");
-            profileImg.classList.add("profile-img");
-            const img = document.createElement("img");
-            img.src = avaliacao.imagem_avalicao; 
-            img.alt = "imagem usuário";
-            profileImg.appendChild(img);
+      const profile = document.createElement("div");
+      profile.classList.add("profile");
 
-            // Cria a seção do nome de usuário
-            const nameUser = document.createElement("div");
-            nameUser.classList.add("name-user");
-            const strong = document.createElement("strong");
-            strong.textContent = avaliacao.nome;
-            const span = document.createElement("span");
-            span.textContent = `@${avaliacao.usuario}`;
-            
-            // Cria a seção das estrelas de avaliação
-            const boxEstrela = document.createElement("div");
-            boxEstrela.classList.add("box-estrela");
+      const profileImg = document.createElement("div");
+      profileImg.classList.add("profile-img");
+      const img = document.createElement("img");
+      img.src = avaliacao.imagem_avalicao;
+      img.alt = "imagem usuário";
+      profileImg.appendChild(img);
 
-            // Converte a nota para inteiro
-            const nota = parseInt(avaliacao.nota);
+      const nameUser = document.createElement("div");
+      nameUser.classList.add("name-user");
+      const strong = document.createElement("strong");
+      strong.textContent = avaliacao.nome;
+      const span = document.createElement("span");
+      span.textContent = `@${avaliacao.usuario}`;
 
-            // Criar as estrelas
-            for (let i = 0; i < 5; i++) {
-                const star = document.createElement("i");
-                star.classList.add("fas", "fa-star");
+      const boxEstrela = createStarRating(avaliacao.nota);
 
-                // Adiciona a classe de estrela vazias
-                if (i >= nota) {
-                    star.classList.add("empty-star");
-                }
+      nameUser.appendChild(strong);
+      nameUser.appendChild(span);
 
-                boxEstrela.appendChild(star);
-            }
+      profile.appendChild(profileImg);
+      profile.appendChild(nameUser);
 
-            // Adiciona o nome de usuário e estrelas à seção superior
-            nameUser.appendChild(strong);
-            nameUser.appendChild(span);
+      boxTop.appendChild(profile);
+      boxTop.appendChild(boxEstrela);
 
-            // Adiciona a imagem de perfil e o nome de usuário à seção de perfil
-            profile.appendChild(profileImg);
-            profile.appendChild(nameUser);
+      avaliacaoItem.appendChild(boxTop);
 
-            // Adiciona a seção de perfil e estrelas à seção superior
-            boxTop.appendChild(profile);
-            boxTop.appendChild(boxEstrela);
+      const clientComment = document.createElement("div");
+      clientComment.classList.add("client-comment");
+      const p = document.createElement("p");
+      p.textContent = avaliacao.opiniao;
 
-            // Adiciona a seção superior à avaliação
-            avaliacaoItem.appendChild(boxTop);
+      clientComment.appendChild(p);
 
-            // Cria a seção de comentário
-            const clientComment = document.createElement("div");
-            clientComment.classList.add("client-comment");
-            const p = document.createElement("p");
-            p.textContent = avaliacao.opiniao;
+      avaliacaoItem.appendChild(clientComment);
 
-            // Adiciona o comentário à seção de comentário
-            clientComment.appendChild(p);
+      testimonialBoxContainer.appendChild(avaliacaoItem);
+    });
 
-            // Adiciona a seção de comentário
-            avaliacaoItem.appendChild(clientComment);
+    avaliacoesContentElement.appendChild(testimonialBoxContainer);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-            // Adiciona a avaliação
-            testimonialBoxContainer.appendChild(avaliacaoItem);  
-        });
+function createStarRating(nota) {
+    const boxEstrelaDiv = document.createElement("div");
+    boxEstrelaDiv.classList.add("box-estrela");
+    
+    const notaInteira = Math.floor(nota);
+    const temMeiaEstrela = nota % 1 !== 0;
 
-        // Adiciona o contêiner de avaliações ao elemento de conteúdo das avaliações
-        avaliacoesContentElement.appendChild(testimonialBoxContainer);  
-    })
-    .catch(error => console.error("Erro ao processar a requisição:", error));
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("i");
+        star.className = "fas fa-star";
+        
+        if (i <= notaInteira) {
+            star.className += " full-star"; // Estrela cheia
+        } else if (i === notaInteira + 1 && temMeiaEstrela) {
+            star.className += " half-star"; // Estrela pela metade
+        } else {
+            star.className = "far fa-star"; // Estrela vazia
+        }
+        
+        boxEstrelaDiv.appendChild(star);
+    }
+    
+    return boxEstrelaDiv;
+}
+
+fetchAvaliacoes();
