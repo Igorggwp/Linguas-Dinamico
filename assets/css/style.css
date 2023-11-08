@@ -629,6 +629,18 @@ span{
     color: #ccc;
 }
 
+.half-star {
+    color: #fabb05; /* Cor da estrela cheia */
+    position: relative;
+}
+
+.half-star::before {
+    content: "\f089";
+    width: 50%;
+    overflow: hidden;
+}
+
+
 /* SEXTA PAGINA (FAQ) */
 
 .sixth-section {
