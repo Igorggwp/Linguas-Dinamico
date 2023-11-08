@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="./assets/css/quiz.css">
     <link rel="stylesheet" href="./assets/css/media.css">
 
-    <title>Centro de Línguas</title>
+    <title>Quiz Centro de Línguas</title>
 </head>
 <body>
     <header>
@@ -25,11 +26,11 @@
         </div>
 
         <nav>
-            <a href="index.html#redes" class="nav-links">Redes</a>
-            <a href="index.html#professores" class="nav-links">Professores</a>
-            <a href="index.html#avaliacoes" class="nav-links">Avaliações</a>
-            <a href="quiz.html" class="nav-links">Quiz</a>
-            <a href="index.html#faq" class="nav-links">FAQ</a>
+            <a href="index.html#eventos" class="nav-links">Eventos</a>
+            <a href="index.html#metodologia" class="nav-links">Metodologia</a>
+            <a href="index.html#" class="nav-links">Professores</a>
+            <a href="index.html#" class="nav-links">Avaliações</a>
+            <a href="index.html#" class="nav-links">FAQ</a>
         </nav>
     </header>
 
@@ -41,18 +42,18 @@
                 <h1 class="main-title">Selecione o idioma para o <Strong>Teste</Strong></h1>
                 <h2 class="main-subtitle">Domine uma nova língua e conquiste o mundo!</h2>
                 <div class="language-buttons">
-                    <a class="language-button" id="english" onclick="selectLanguage('english')">
+                    <a class="language-button" id="english" onclick="fetchQuestions('ingles')">
                         <div class="red-box">
                             INGLÊS
                         </div>
                     </a>
-                    <a class="language-button" id="spanish" onclick="selectLanguage('spanish')">
+                    <a class="language-button" id="spanish" onclick="fetchQuestions('espanhol')">
                         <div class="red-box">
                             ESPANHOL
                         </div>
                     </a>
-                    <a class="language-button" id="french" onclick="selectLanguage('french')">
-                    <div class="red-box">
+                    <a class="language-button" id="french" onclick="fetchQuestions('frances')">
+                        <div class="red-box">
                             FRANCÊS
                         </div>
                     </a>
@@ -78,7 +79,7 @@
             </div>
             <div id="finish" class="hide">
                 <h1>Deseja terminar o teste?</h1>
-                <div>
+                <div id="finalizar">
                     <button id="back-question">Voltar</button>
                     <button id="finish-btn">Terminar</button>
                 </div>
@@ -118,9 +119,8 @@
                         <ul>
                             <li><a href="#metodologia">Quem somos?</a></li>
                             <li><a href="#">Localização</a></li>
-                            <li><a href="#FAQ">FAQ</a></li>
+                            <li><a href="#faq"class="nav-links">FAQ</a></li>
                             <li><a href="#">Contatos</a></li>
-                            <li><a href="#">Termos de privacidade</a></li>
                         </ul>
                     </div>
 
@@ -129,11 +129,11 @@
                     <div class="footer-col">
                         <h4>Educação</h4>
                         <ul>
-                            <li><a href="#professores">Professores</a></li>
-                            <li><a href="#metodologia">Metodologia</a></li>
-                            <li><a href="#">Horários</a></li>
-                            <li><a href="#redes">Eventos</a></li>
                             <li><a href="#">Calendários</a></li>
+                            <li><a href="#eventos">Eventos</a></li>
+                            <li><a href="#">Horários</a></li>
+                            <li><a href="#metodologia">Metodologia</a></li>
+                            <li><a href="#professores">Professores</a></li>
                         </ul>
                     </div>
 
@@ -142,10 +142,10 @@
                     <div class="footer-col">
                         <h4>Cursos</h4>
                         <ul>
-                            <li><a href="#">Espanhol</a></li>
-                            <li><a href="#">Inglês</a></li>
-                            <li><a href="#">Francês</a></li>
-                            <li><a href="#">Português</a></li>
+                            <li><a href="index.html#">Espanhol</a></li>
+                            <li><a href="index.html#">Inglês</a></li>
+                            <li><a href="index.html#">Francês</a></li>
+                            <li><a href="index.html#">Português</a></li>
                         </ul>
                     </div>
 
@@ -154,9 +154,9 @@
                     <div class="footer-col">
                         <h4>Administração</h4>
                         <ul>
-                            <li><a href="#">Rodovia estadual, PR-182</a></li>
-                            <li><a href="#">TOLEDO | PARANÁ | BRASIL</a></li>
-                            <li><a href="#">+55 (45)2036-3601</a></li>
+                            <li><a>Rodovia estadual, PR-182</a></li>
+                            <li><a>TOLEDO | PARANÁ | BRASIL</a></li>
+                            <li><a>+55 (45)2036-3601</a></li>
                         </ul>
                     </div>
 

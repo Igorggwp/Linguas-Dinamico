@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,13 +20,14 @@
 <body>
     <header>
         <div  class="box-img-header">
-            <a class="logo" href="#">
+            <a class="logo">
             <img src="./assets/img/logos/centro_de_linguas.svg" alt="logo">
             </a>
         </div>
 
         <nav>
-            <a href="#redes" class="nav-links">Redes</a>
+            <a href="#eventos" class="nav-links">Eventos</a>
+            <a href="#metodologia" class="nav-links">Metodologia</a>
             <a href="#professores" class="nav-links">Professores</a>
             <a href="#avaliacoes" class="nav-links">Avaliações</a>
             <a href="quiz.html" class="nav-links">Quiz</a>
@@ -51,9 +53,12 @@
                     expandindo horizonte e conectando culturas!
                 </p>
 
-                <form>
-                    <input type="text" placeholder="Nome completo">
-                    <input type="email" placeholder="E-mail">
+                <form id="MeuFormulario">
+                    
+                    <input type="text" id="nome" name="nome" placeholder="Nome">
+
+                    <input type="email" id="email" name="email" placeholder="E-mail">
+
                     <select name="cursos" id="cursos">
                         <option value="selecione">Escolha um Curso</option>
                     </select>
@@ -61,6 +66,7 @@
                     <input type="submit" value="ENVIAR">
 
                 </form>
+                
             </div>
         </section>
 
@@ -133,7 +139,7 @@
                 </div>
 
                 <div id="coordenador" class="main__img">
-                    <p class="title">Coordenação</p>
+                    <p class="title">Coordenador(a)</p>
                     <p class="subtitle">Centro de línguas</p>
                 </div>
             </main>
@@ -148,31 +154,7 @@
         <div class="wrapper-professores">
             <h2 class="titulo-prof">Conheça nossa equipe de Professores</h2>
 
-            <div class="caixas">
-
-                <div class="box1">
-                    <img class="img-profile" src="./assets/img/perfil.jpg" alt="professora portugues">
-                    <div class="nome-professor">Taina Grespan Pensin</div>
-                    <div class="materia-professor">Professora de Português</div>
-                </div>
-
-                <div class="box2">
-                <img class="img-profile" src="./assets/img/perfil.jpg" alt="professor frances">
-                    <div class="nome-professor">Ilo Ba</div>
-                    <div class="materia-professor">Professor de Francês</div>
-                </div>
-
-                <div class="box3">
-                    <img class="img-profile" src="./assets/img/perfil.jpg" alt="professora ingles">
-                    <div class="nome-professor">Josiane Hammes</div>
-                    <div class="materia-professor">Professora de Inglês</div>
-                </div>
-
-                <div class="box4">
-                    <img class="img-profile" src="./assets/img/perfil.jpg" alt="professora espanhol">
-                    <div class="nome-professor">Talita Mariele Bortolini</div>
-                    <div class="materia-professor">Professora de Espanhol</div>
-                </div>
+            <div class="caixas" id="caixas">
 
             </div>
         </div>
@@ -213,9 +195,8 @@
                         <ul>
                             <li><a href="#metodologia">Quem somos?</a></li>
                             <li><a href="#">Localização</a></li>
-                            <li><a href="#FAQ">FAQ</a></li>
+                            <li><a href="#faq"class="nav-links">FAQ</a></li>
                             <li><a href="#">Contatos</a></li>
-                            <li><a href="#">Termos de privacidade</a></li>
                         </ul>
                     </div>
 
@@ -224,11 +205,11 @@
                     <div class="footer-col">
                         <h4>Educação</h4>
                         <ul>
-                            <li><a href="#professores">Professores</a></li>
-                            <li><a href="#metodologia">Metodologia</a></li>
-                            <li><a href="#">Horários</a></li>
-                            <li><a href="#eventos">Eventos</a></li>
                             <li><a href="#">Calendários</a></li>
+                            <li><a href="#eventos">Eventos</a></li>
+                            <li><a href="#">Horários</a></li>
+                            <li><a href="#metodologia">Metodologia</a></li>
+                            <li><a href="#professores">Professores</a></li>
                         </ul>
                     </div>
 
@@ -245,9 +226,9 @@
                     <div class="footer-col">
                         <h4>Administração</h4>
                         <ul>
-                            <li><a href="#">Rodovia estadual, PR-182</a></li>
-                            <li><a href="#">TOLEDO | PARANÁ | BRASIL</a></li>
-                            <li><a href="#">+55 (45)2036-3601</a></li>
+                            <li><a>Rodovia estadual, PR-182</a></li>
+                            <li><a>TOLEDO | PARANÁ | BRASIL</a></li>
+                            <li><a>+55 (45)2036-3601</a></li>
                         </ul>
                     </div>
 
@@ -265,29 +246,15 @@
         </div>        
     </footer>
 
-    <script src="./src/accordionEvent.js"></script>
     <script src="./src/avaliacoes.js"></script>
     <script src="./src/coordenador.js"></script>
     <script src="src/cursos.js"></script>
     <script src="./src/eventos.js"></script>
     <script src="./src/faq.js"></script>
+    <script src="./src/professores.js"></script>
+    <script src="src/formulario.js"></script>
     <script src="./src/goToTop.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

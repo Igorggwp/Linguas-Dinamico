@@ -1,125 +1,179 @@
-@media screen and (max-width:1060){
-    .testimonial-box{
-        width: 45%;
-        padding: 10px;
+@media screen and (max-width: 769px) {
+    /* Main */
+    main {
+        flex-direction: column;
+        gap: 2rem;
     }
-}
-
-@media screen and (max-width:850px){
-    .redes{
+    /* First Section */
+    .first-section {
+        text-align: center;
+    }
+    #MeuFormulario {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    #nome, #email, #cursos {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    /* Second Section */
+    .second-section {
+        text-align: center;
+        
         flex-direction: column;
         gap: 20px;
     }
-
-    .redes-text{
-        font-size: 10px;
-        color: var(--blue);
-    }
-    
-    .descrição-redes{
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width:1000px){
-    main{
-        flex-direction: column;
-    }
-    
-    .right-section{
-        margin-top: 20px;
+    .eventos {
         display: flex;
-        width: 100vw;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width:790px){
-    .testimonial-box{
-        width:100%
-    }
-    .testimonial-heading h1{
-        font-size: var(--fs-28);
-    }
-    form .input{
-        align-items: center;
-    }
-
-    .titulo-prof{
-        font-size: 28px;
-    }
-    .titulo-redes{
-        font-size: 28px;
-    }
-    .descrição-redes{
-        font-size: 20px;
-    }
-    h3{
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width:340px){
-    .box-top{
         flex-wrap: wrap;
-        margin-bottom: 10px;
+        justify-content: space-between;
+        gap: 40px;
     }
-    .reviews{
-        margin-top: 10px;
+    .eventos-text {
+        max-width: 70rem;
+        margin-right: 0px;
     }
-}
-
-@media screen and (max-width: 767px){
-    .footer-col{
-        width: 50%;
-        margin-bottom: 30px;
+    .eventos a {
+        width: calc(40% - 4px);
     }
-}
-
-@media screen and (max-width: 574px){
-    .footer-col{
-        width: 100%;
-    }
-}
-
-::selection{
-    color: var(--blue);
-    background-color: var(--cyan);
-}
-
-@media (max-width:1800px){
-    
-    .main__img,
-    .main__text{
-        width: 100%;
+    /* Third Section */
+    .third-section {
         text-align: center;
-        margin-top: 40px;
+        padding: 20px 5%;
     }
-}
-@media (max-width:500px){
-    .main__text .main__text-footer{
+    .main__text {
+        width: 100%;
+    }
+    .main__img {
+        width: 100%;
+        margin-top: 3rem;
+    }
+    .main__text-metodologia > div {
+        margin: 20px 0;
+    }
+    .wrapper-metodologia {
+        padding: 0;
+    }
+    /* Fourth Section */
+    section {
+        padding-top: 0rem;
+    }
+    .fourth-section {
+        text-align: center;
+    }
+    .titulo-prof {
+        font-size: var(--fs-38);
+        text-align: center;
+    }
+    .caixas {
+        display: flex;
         flex-wrap: wrap;
-        margin-top: -20px;
+        justify-content: center;
     }
-    .main__text .main__text-footer div{
-        margin: 5px 0 !important;
+
+    .prof-img {
+        width: 60%;
+        height: 60%;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    /* Fifth Section */
+    .testimonial-heading {
+        text-align: center;
+    }
+    .testimonial-box {
+        flex: 0 0 360px;
+        box-shadow: 1px 1px 3px var(--white);
+        background-color: var(--white);
+        border-radius: 0px 30px 30px 30px;
+        padding: 20px;
+        margin: 15px;
+    }
+    /* Sixth Section */
+    .sixth-section {
+        text-align: center;
+        margin-top: 4rem;
+    }
+    /* Footer */
+    footer {
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        padding-top: 3rem;
+    }
+    .titulo-faq {
+        margin-bottom: 2rem;
+    }
+    .footer-col {
+        width: 50%;
+        padding: 0 10px;
+        margin-bottom: 2rem;
+    }
+    .footer-col h4 {
+        font-size: var(--fs-16);
     }
 }
-@media (max-width:500px){
-    .main__text h1{
-        font-size: 3em;
+/* Media Quiz */
+@media screen and (max-width: 769px) {
+    /* Selecao */
+    .main-title{
+        margin-top: 1rem;
+        margin-bottom: 4rem;
     }
-    .main__text .main__text-footer p{
-        font-size: 1em;
+    .main-subtitle {
+        margin-bottom: 2rem;
     }
-}
-@media (max-width:400px){
-    .main__text h1{
-        font-size: 2.5em;
+    .language-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2rem;
     }
-}
-@media (max-width:300px){
-    .main__text h1{
-        font-size: 2em;
+    /* Quiz */
+    #quiz {
+        padding: 1rem 0;
+    }
+    .progress-bar {
+        margin-bottom: 0px;
+    }
+    #quiz h2 {
+        font-size: 26px;
+        font-weight: 500;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    #answer-button {
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .btn {
+        width: 50%;
+        margin: 5px 0;
+        padding: 10px;
+    }
+    /* Finalizar */
+    #finish {
+        width: 100%;
+        height: 50%;
+        margin-top: 5rem;
+        margin-bottom: 15rem;
+    }
+    #finalizar {
+        display: flex;
+        justify-content: space-between;
+    }
+    /*  Resultado */
+    .resultado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .result-content2 {
+        padding: 15px 30px;
+        gap: 15px;
+        width: 350px;
+        height: 250px;
     }
 }

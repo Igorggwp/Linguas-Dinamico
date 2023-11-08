@@ -44,8 +44,11 @@
     --fs-48: 3rem; 
 }
 
-/* DEFINIÇÃO DO PLANO DE FUNDO */
+html{
+    scroll-behavior: smooth;
+}
 
+/* DEFINIÇÃO DO PLANO DE FUNDO */
 body{
     background-image: url('../img/backgrounds/papel_de_parede_azul.svg');
     font-family: var(--fonte);
@@ -55,11 +58,6 @@ body{
     line-height: 1.0;
     min-height: 100vh;
 }
-
-/*
-ul {
-    list-style: none; 
-} */
 
 /* HEADER */
 
@@ -101,8 +99,6 @@ header nav a {
     text-decoration: underline;
 }
 
-
-
 /* BOTÃO BACK TO TOP */
 
 #btnToTop {
@@ -124,8 +120,6 @@ header nav a {
   #btnToTop:hover {
     background-color: #4e5540; 
   }
-
-
 
 main{
     display: flex;
@@ -167,7 +161,6 @@ h2{
 .first-paragraph{
     font-size: var(--fs-24);
 }
-
 
 /* FORM CADASTRO */
 
@@ -411,6 +404,7 @@ span{
 .wrapper-metodologia{
     display: flex;
     align-items: center;
+    justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 10%;
@@ -438,6 +432,14 @@ span{
     background-color: var(--white);
     border-radius: 30px;
     gap: 20px;
+    
+}
+
+.main__img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .main__img .title,
@@ -490,13 +492,21 @@ span{
     min-height: 400px;
 }
 
-.img-profile{
+.prof-img {
     width: 40%;
-    border-radius: 50px;
-    margin-bottom: 20px;
+    height: 40%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.box1{
+.prof-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.box {
     width: 250px;
     height: 250px;
     background-color: var(--white);
@@ -506,38 +516,8 @@ span{
     align-items: center;
     flex-direction: column;
 }
-
-.box2{
-    width: 235px;
-    height: 250px;
-    background-color: var(--white);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.box3{
-    width: 235px;
-    height: 250px;
-    background-color: var(--white);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.box4{
-    width: 235px;
-    height: 250px;
-    background-color: var(--white);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.box p{
+    margin-top: 30px;
 }
 
 /* QUINTA PAGINA (AVALIAÇÕES) */
@@ -646,7 +626,7 @@ span{
 }
 
 .empty-star {
-    color: #ccc; /* ou qualquer outra cor para estrelas vazias */
+    color: #ccc;
 }
 
 .half-star {
@@ -663,24 +643,28 @@ span{
 
 /* SEXTA PAGINA (FAQ) */
 
-.sixth-section{
+.sixth-section {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 10rem;
+    margin-top: 7rem;
     align-items: center;
-}
-
-.sixth-section > div{
+  }
+  
+  .sixth-section > div {
     display: flex;
     flex-direction: column;
-    
-}
+  }
 
-.layout {
+  .titulo-faq {
+    padding-bottom: 3rem;
+  }
+  
+  .layout {
     width: 80%;
     margin: auto;
   }
+  
   .accordion {
     padding: 10px;
     margin-top: 10px;
@@ -688,14 +672,16 @@ span{
     background: var(--white);
     border-radius: 10px;
   }
-  .accordion__question > p {
+  
+  .accordion__question {
     margin: 5px;
     padding: 0;
     font-size: var(--fs-20);
     font-weight: var(--fw-500);
     color: var(--blue);
   }
-  .accordion__answer > p {
+  
+  .accordion__answer {
     margin: 5px;
     padding: 10px;
     font-size: var(--fs-18);
@@ -703,15 +689,19 @@ span{
     background-color: var(--cyan);
     border-radius: 0px 10px 10px 10px;
   }
+  
   .accordion:hover {
     cursor: pointer;
   }
+  
   .accordion__answer {
     display: none;
   }
+  
   .accordion.active .accordion__answer {
     display: block;
   }
+  
 
 /* FOOTER */
 
