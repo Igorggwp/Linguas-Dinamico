@@ -9,7 +9,7 @@ Este projeto faz uso das seguintes tecnologias:
 - **HTML**
 - **CSS**
 - **JavaScript**
-- **Sanity**
+- **Sanity** (CMS para gerenciamento de conteúdo dinâmico)
 
 ## 💡 Destaques
 
@@ -28,9 +28,13 @@ Este projeto faz uso das seguintes tecnologias:
 Este projeto foi realizado com dedicação pela equipe composta por:
 
 - **Igor Alexandre da Costa**
-- **Paola Julie dos Santos da Silva**
 - **Arthur Gattermann Noronha**
 - **João Vitor Schneider Braz da Silva**
 - **Victor José Angélico**
+- **Paola Julie dos Santos da Silva**
 
 Agradecemos por fazer parte do nosso projeto! 🌟
+
+## 🔗 Repositório Relacionado
+
+O código-fonte da interface de administração está disponível no repositório [adm-linguas-dinamico](https://github.com/igorggwp/adm-linguas-dinamico), onde ocorre a integração com o Sanity.
