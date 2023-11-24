@@ -28,6 +28,7 @@ Este projeto faz uso das seguintes tecnologias:
 Este projeto foi realizado com dedicação pela equipe composta por:
 
 - **Igor Alexandre da Costa**
+- **Paola Julie dos Santos da Silva**
 - **Arthur Gattermann Noronha**
 - **João Vitor Schneider Braz da Silva**
 - **Victor José Angélico**
