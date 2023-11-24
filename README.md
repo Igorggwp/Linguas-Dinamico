@@ -17,8 +17,6 @@ Este projeto faz uso das seguintes tecnologias:
 
 - **Sanity CMS**: Utilizamos a plataforma Sanity como CMS para facilitar o gerenciamento e a atualização do conteúdo do site de forma eficiente.
 
-- **Interface de Administração**: Implementamos uma interface intuitiva de administração para simplificar a gestão de conteúdo, permitindo que a equipe atualize facilmente informações relevantes.
-
 - **Quiz Dinâmico**: Adicionamos um quiz interativo, desenvolvido em JavaScript, para testar os conhecimentos dos usuários sobre os cursos oferecidos. Respostas são processadas em tempo real, proporcionando uma experiência de aprendizado mais interativa.
 
 - **Responsividade para Telas Móveis**: Implementamos media queries para garantir que o site seja responsivo em dispositivos móveis, proporcionando uma experiência de usuário otimizada em qualquer tamanho de tela.
